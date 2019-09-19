@@ -9,32 +9,28 @@ using namespace std;
 
 //Main
 int main(){
-	char binary[11];
-	for(int i; i<11; i++){ binary[i] = 'x';} //Initialization
+	char binary[10];
 	cout<< "Enter the binary number: ";
 	
-	cin.get(binary,10);
+	cin>>binary;
 
 	//Print Char Array for Confirmation
 	cout<< "Number Entered: ";
-	for(int j=0; j<11; j++)
+	for(int j=0; j<10; j++)
 	{cout<<binary[j];}
 	
 	int d = 0; int p = 0;
 
 	for(int j=9; j>=0; j--)
 	{
-		if(binary[j]!= 'x'){
-
-			//if((binary[j]!='0')&&(binary[j]!='1')) {cout<<endl<< "Invalid binary!"<<endl; return 0;}
-
-			/*else*/
-			{
-				d = d + ((int)(binary[j])* pow(2,p));
-				p++;
-			}
-		}
+		d = d + (((int)(binary[j])-48)* pow(2,p));
+		p++;
+		
+	
 	}
+
 	cout<<endl<< "Decimal: "<<d<<endl;
 
 }
+
+//48 ==> ASCI for 0, '1' = 49.
